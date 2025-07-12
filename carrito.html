@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Website</title>
+     <!--Font awesome cdn link-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!--custom css file link-->
+     <link rel="stylesheet" href="estilos/style.css">
+     <link rel="stylesheet" href="estilos/carrito.css">
+
+</head>
+
+<body>
+
+    <!--Header section starts-->
+    <header>
+        <input type="checkbox" name=""s id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">FlowerLover<span>.</span></a>
+        <nav class="navbar">
+            <a href="Index.html">Inicio</a>
+            <a href="#about">Acerca de</a>
+            <a href="Productos.html">Productos</a>
+            <a href="#review">Opiniones</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="carrito.html" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-user"></a>
+            
+        </div>
+    </header>
+<h1 class="heading">Productos <span>.</span></h1>
+
+
+<!-- Carrito -->
+<div id="carrito">
+  <h2>🛒 Carrito de Compras</h2>
+  <ul id="carrito-items">
+    <!-- Los productos se insertan aquí dinámicamente -->
+    <li class="item-carrito">
+    <img src="images/maceta-floral.jpg" alt="Maceta floral" class="img-producto">
+    <span class="nombre-producto">Maceta floral</span>
+    <span class="precio-producto">S/1799</span>
+    <button class="eliminar-btn">Eliminar</button>
+  </li>
+</ul>
+  <div class="carrito-total">
+    <span>Total:</span>
+    <span id="total-precio">S/2000</span>
+  </div>
+  <button class="comprar-btn">Realizar compra</button>
+</div>
+
+
+<script src="JavaScript/carrito.js"></script>
+</body>
+</html>
