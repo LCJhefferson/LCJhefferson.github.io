@@ -1,44 +1,10 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-  const carritoItems = document.getElementById('carrito-items');
-  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-  if (carrito.length === 0) {
-    carritoItems.innerHTML = "<li>El carrito está vacío</li>";
-  } else {
-    carrito.forEach(producto => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <img src="${producto.imagen}" alt="${producto.nombre}" style="width:50px; vertical-align:middle; margin-right:10px;">
-        <strong>${producto.nombre}</strong> - ${producto.precio}
-      `;
-      carritoItems.appendChild(li);
-    });
-  }
-});
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const carritoItems = document.getElementById('carrito-items');
   const totalPrecio = document.getElementById('total-precio');
-const productoEjemplo = {
-  nombre: "Maceta floral",
-  precio: "S/1799",
-  imagen: "images/maceta-floral.jpg"
-};
-
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
   function renderizarCarrito() {
-    carritoItems.innerHTML = ''; // Limpia el contenido actual
+    carritoItems.innerHTML = '';
 
     if (carrito.length === 0) {
       carritoItems.innerHTML = '<li>El carrito está vacío</li>';
@@ -50,7 +16,7 @@ const productoEjemplo = {
 
     carrito.forEach((producto, index) => {
       const li = document.createElement('li');
-       li.classList.add('item-carrito');
+      li.classList.add('item-carrito');
 
       li.innerHTML = `
         <img src="${producto.imagen}" alt="${producto.nombre}" class="img-producto">     
@@ -61,7 +27,6 @@ const productoEjemplo = {
 
       carritoItems.appendChild(li);
 
-      // Extrae el número del precio (quita 'S/')
       const precioNumerico = parseFloat(producto.precio.replace('S/', '').replace(',', ''));
       total += precioNumerico;
     });
@@ -69,21 +34,28 @@ const productoEjemplo = {
     totalPrecio.textContent = `S/${total.toFixed(2)}`;
   }
 
-  // Evento delegado para eliminar productos
   carritoItems.addEventListener('click', (e) => {
     if (e.target.classList.contains('eliminar-btn')) {
-      const index = e.target.getAttribute('data-index');
-
-      // Eliminar producto del array
+      const index = parseInt(e.target.getAttribute('data-index'), 10);
+      
+      // Elimina el producto solo desde el array
       carrito.splice(index, 1);
 
-      // Guardar en localStorage
+      // Guarda en localStorage y vuelve a renderizar
       localStorage.setItem('carrito', JSON.stringify(carrito));
-
-      // Volver a mostrar el carrito
       renderizarCarrito();
     }
   });
 
   renderizarCarrito();
 });
+
+
+const li = e.target.closest('li');
+li.classList.add('removiendo');
+
+setTimeout(() => {
+  carrito.splice(index, 1);
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  renderizarCarrito();
+}, 300);

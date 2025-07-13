@@ -23,8 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Guardar de nuevo en localStorage
       localStorage.setItem('carrito', JSON.stringify(carrito));
+mostrarNotificacion("Producto agregado al carrito 🌷");
 
-      alert(`"${nombre}" fue añadido al carrito.`);
     });
   });
 });
+
+function mostrarNotificacion(mensaje) {
+  const noti = document.createElement('div');
+  noti.className = 'notificacion';
+  noti.textContent = mensaje;
+  document.body.appendChild(noti);
+
+  setTimeout(() => {
+    noti.classList.add('desvanecer');
+  }, 1500);
+
+  setTimeout(() => {
+    document.body.removeChild(noti);
+  }, 2000);
+}
+

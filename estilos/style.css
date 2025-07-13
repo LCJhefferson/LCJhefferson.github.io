@@ -75,7 +75,7 @@ header .logo span{
 header .navbar a{
     font-size: 2rem;
     padding: 0 1.5rem;
-    color: #666;
+    color: #677;
 }
 
 header .navbar a:hover{
@@ -145,7 +145,6 @@ header .fa-bars{
     gap: 2rem;
     flex-wrap: wrap;
     pad: 2rem 0;
-    padding-bottom: 3rem;
 
 }
 
@@ -180,7 +179,7 @@ header .fa-bars{
 .about .row .content{
     flex: 1 1 40rem;
 }
-
+ 
 .about .row .content h3{
     font-size: 3rem;
     color: #333;
@@ -189,7 +188,7 @@ header .fa-bars{
 
 .about .row .content p{
     font-size: 1.5rem;
-    color: #999;
+    color: #989;
     padding: .5rem 0;
     padding-top: 1rem;
     line-height: 1.5;
@@ -320,7 +319,7 @@ header .fa-bars{
 
 .products .box-container .box .content .price span{
     font-size: 1.5rem;
-    color: #999;
+    color: #989;
     font-weight: lighter;
     text-decoration: line-through;
 }
@@ -356,7 +355,7 @@ header .fa-bars{
 }
 
 .review .box-container .box p{
-    color: #999;
+    color: #989;
     font-size: 1.5rem;
     line-height: 1.5rem;
     padding-top: 2rem;
@@ -385,7 +384,7 @@ header .fa-bars{
 
 .review .box-container .box .user span{
     font-size: 1.5rem;
-    color: #999;
+    color: #989;
 }
 
 .contact .row{
@@ -462,7 +461,7 @@ header .fa-bars{
 
 .footer .box-container .box a{
     display: block;
-    color: #666;
+    color: #677;
     font-size: 1.5rem;
     padding: 1rem 0;
 }
@@ -492,6 +491,39 @@ header .fa-bars{
 }
 
 
+
+.Titulo {
+  text-align: center;
+  margin-top: 57px;
+}
+
+
+
+
+
+
+
+
+.notificacion {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #e84393;
+  border-style: groove;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 1.7rem;
+  z-index: 1000;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.notificacion.desvanecer {
+  opacity: 0;
+  transform: translateY(20px);
+}
 
 
 
